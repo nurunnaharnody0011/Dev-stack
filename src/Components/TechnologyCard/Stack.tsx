@@ -37,9 +37,7 @@ const Stack = ({technologies, onRemoveSelectedTechnology, onRemoveAllTechnologie
     {technologies.map((technology) => (
       <div
         key={technology.id}
-        className="flex items-center gap-3 rounded-xl border border-pink-200 p-3 bg-pink-50"
-        onClick={() => onRemoveSelectedTechnology(technology)}
-      >
+        className="flex items-center gap-3 rounded-xl border border-pink-200 p-3 bg-pink-50">
         <img
           src={technology.icon}
           alt={technology.name}

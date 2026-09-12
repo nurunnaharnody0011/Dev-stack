@@ -1,5 +1,6 @@
 import Logo from '../assets/logo-text.png'
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import { BrandGradient } from "../styles/theme";
 const Navbar = () => {
     
     return (
@@ -20,7 +21,7 @@ const Navbar = () => {
             </div>
             <div className='flex justify-between gap-3'>
                 <button className="btn rounded-full">Sign in</button>
-                <button className="btn text-white bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED]]  rounded-full">Sign up</button>
+                <button style={{ backgroundImage: BrandGradient }} className="btn text-white ]  rounded-full">Sign up</button>
             </div>
             </div>
         </nav>

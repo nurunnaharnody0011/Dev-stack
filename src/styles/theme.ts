@@ -1,0 +1,1 @@
+export const BrandGradient = "linear-gradient(to right,#FF5722, #D81B7E ,#7C3AED)";
