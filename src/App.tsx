@@ -4,6 +4,7 @@ import Banner from "./Components/Banner"
 import Navbar from "./Components/Navbar"
 import Technologies from "./Components/TechnologyCard/Technologies";
 import type { TechnologyType } from "./types/technologyType";
+import { Toaster } from "react-hot-toast";
 
 const technologyFetch = async():Promise<TechnologyType[]>=>{
   const res = await fetch('/public/data.json')
@@ -21,11 +22,9 @@ function App() {
      <Navbar></Navbar>
      <Banner></Banner>
      <Suspense fallback={<h2>Loading...</h2>}>
-<Technologies technologyPromise={technologyPromise}>
-
-</Technologies>
+<Technologies technologyPromise={technologyPromise}></Technologies>
      </Suspense>
-
+<Toaster position="top-right" toastOptions={{ duration: 1500 }}></Toaster>
     
     </>
   )

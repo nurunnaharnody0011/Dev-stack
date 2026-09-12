@@ -2,6 +2,7 @@ import { use, useState } from "react";
 import type { TechnologyType } from "../../types/technologyType";
 import Technology from "./Technology";
 import Stack from "./Stack";
+import { toast } from "react-hot-toast";
 
 
 interface TechnologyProps{
@@ -13,6 +14,7 @@ const Technologies = ({technologyPromise}:TechnologyProps) => {
     const handleSelectedTechnologies = (technology: TechnologyType):void => {
         const newSelectedTechnologies = [...selectedTechnologies, technology];
         setSelectedTechnologies(newSelectedTechnologies);
+        toast.success(`${technology.name} added to stack`);
     };
     const removeSelectedTechnology = (technology: TechnologyType): void => {
         const newSelectedTechnologies = selectedTechnologies.filter(
