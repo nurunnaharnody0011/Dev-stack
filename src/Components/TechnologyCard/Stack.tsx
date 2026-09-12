@@ -1,12 +1,14 @@
 
 import { CiCircleRemove } from "react-icons/ci";
 import type { TechnologyType } from "../../types/technologyType";
+import { MdNavigateNext } from "react-icons/md";
 interface StackProps {
     technologies: TechnologyType[];
     onRemoveSelectedTechnology: (technology: TechnologyType) => void;
+    onRemoveAllTechnologies: () => void;
 }
 
-const Stack = ({technologies, onRemoveSelectedTechnology}: StackProps) => {
+const Stack = ({technologies, onRemoveSelectedTechnology, onRemoveAllTechnologies}: StackProps) => {
     return (
         <div>
             <div className=" top-6 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
@@ -64,6 +66,16 @@ const Stack = ({technologies, onRemoveSelectedTechnology}: StackProps) => {
     ))}
   </div>
 )}
+  {technologies.length > 0 && (
+    <div className="mt-6">
+      <button
+        className=" btn cursor-pointer text-xs bg-pink-50 text-pink-400 border-pink-200 border p-2 rounded-2xl"
+        onClick={onRemoveAllTechnologies}
+      >
+        Remove All Technologies <MdNavigateNext />
+      </button>
+    </div>
+  )}
 </div>
         </div>
     );

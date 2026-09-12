@@ -20,7 +20,7 @@ const Navbar = () => {
             </div>
             <div className='flex justify-between gap-3'>
                 <button className="btn rounded-full">Sign in</button>
-                <button className="btn text-white bg-[#D91B7E]  rounded-full">Sign up</button>
+                <button className="btn text-white bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED]]  rounded-full">Sign up</button>
             </div>
             </div>
         </nav>

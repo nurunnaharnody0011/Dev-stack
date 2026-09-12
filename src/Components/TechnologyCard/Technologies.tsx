@@ -22,6 +22,10 @@ const Technologies = ({technologyPromise}:TechnologyProps) => {
         );
         setSelectedTechnologies(newSelectedTechnologies);
     };
+    const handleRemoveAllTechnologies = (): void => {
+        setSelectedTechnologies([]);
+        toast.success("All technologies removed from stack");
+    };
     return (
         
         <div className="container mx-auto">
@@ -29,7 +33,7 @@ const Technologies = ({technologyPromise}:TechnologyProps) => {
             <p className="mb-2 text-[#64748B]">Pick one technology per category to build your ideal stack.</p>
             <div className="grid items-start gap-8 lg:grid-cols-[1fr_300px]">
             <Technology technologies={technologies} handleSelectedTechnologies={handleSelectedTechnologies} selectedTechnologies={selectedTechnologies} removeSelectedTechnology={removeSelectedTechnology}></Technology>
-            <Stack technologies={selectedTechnologies} onRemoveSelectedTechnology={removeSelectedTechnology}></Stack>
+            <Stack technologies={selectedTechnologies} onRemoveSelectedTechnology={removeSelectedTechnology} onRemoveAllTechnologies={handleRemoveAllTechnologies}></Stack>
             </div>
         </div>
     );
