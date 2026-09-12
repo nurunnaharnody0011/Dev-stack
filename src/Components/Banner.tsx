@@ -1,7 +1,7 @@
 import BannerImage from '../assets/banner-stack.png'
 const Banner = () => {
     return (
-        <section className='flex justify-between items-center container mx-auto'>
+        <section className='flex justify-between items-center container mx-auto mt-20'>
             <div>
                 <h1 className='text-[#0F172A] font-extrabold text-[60px] font-[Inter]'>Build Your Ideal <br />
                 <span className='bg-linear-to-r from-[#FF5722] via-[#D81B7E] to-[#7C3AED] bg-clip-text text-transparent'> Development Stack</span></h1>

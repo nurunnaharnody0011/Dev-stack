@@ -1,13 +1,17 @@
 import Logo from '../assets/logo-text.png'
+import { HiOutlineMenuAlt2 } from "react-icons/hi";
 const Navbar = () => {
+    
     return (
-        <nav className='container flex justify-between gap-12 mx-auto mt-4 border-b-2 border-[#475569]'>
-            <div>
+        <nav className='fixed left-0 top-0 w-full bg-white/95 backdrop-blur-md  border-[#475569]'>
+            <div className='container mt-3 mb-2.5 mx-auto flex justify-between border-[#475569] items-center'>
+                <HiOutlineMenuAlt2 className="shrink-0 text-3xl text-[#0F172A] cursor-pointer md:hidden" />
+                <div className='hidden md:block'>
                 <img src={Logo} alt="" />
             </div>
-            <div>
+            <div className='hidden md:block'>
                 <ul className='flex justify-between items-center gap-4'>
-                    <li>Home</li>
+                    <li className='text-[#DB2777]'>Home</li>
                     <li>Technologies</li>
                     <li>Projects</li>
                     <li>About</li>
@@ -18,7 +22,7 @@ const Navbar = () => {
                 <button className="btn rounded-full">Sign in</button>
                 <button className="btn text-white bg-[#D91B7E]  rounded-full">Sign up</button>
             </div>
-            
+            </div>
         </nav>
     );
 };

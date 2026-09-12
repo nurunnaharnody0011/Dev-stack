@@ -9,7 +9,7 @@ interface StackProps {
 const Stack = ({technologies, onRemoveSelectedTechnology}: StackProps) => {
     return (
         <div>
-            <div className="sticky top-6 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+            <div className=" top-6 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
   <h2 className="text-xl font-bold text-[#0F172A]">
     Your Stack
   </h2>

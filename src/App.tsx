@@ -20,6 +20,7 @@ function App() {
   return (
     <>
      <Navbar></Navbar>
+
      <Banner></Banner>
      <Suspense fallback={<h2>Loading...</h2>}>
 <Technologies technologyPromise={technologyPromise}></Technologies>
