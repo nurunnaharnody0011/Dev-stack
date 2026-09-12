@@ -3,8 +3,9 @@ import { Suspense } from "react";
 import Banner from "./Components/Banner"
 import Navbar from "./Components/Navbar"
 import Technologies from "./Components/TechnologyCard/Technologies";
+import type { TechnologyType } from "./types/technologyType";
 
-const technologyFetch = async()=>{
+const technologyFetch = async():Promise<TechnologyType[]>=>{
   const res = await fetch('/public/data.json')
   const data = await res.json();
   return data;
