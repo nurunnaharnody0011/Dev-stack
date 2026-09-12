@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar"
 import Technologies from "./Components/TechnologyCard/Technologies";
 import type { TechnologyType } from "./types/technologyType";
 import { Toaster } from "react-hot-toast";
+import Footer from "./Components/Footer";
 
 const technologyFetch = async():Promise<TechnologyType[]>=>{
   const res = await fetch('/public/data.json')
@@ -26,7 +27,9 @@ function App() {
 <Technologies technologyPromise={technologyPromise}></Technologies>
      </Suspense>
 <Toaster position="top-right" toastOptions={{ duration: 1500 }}></Toaster>
+
     
+    <Footer></Footer>
     </>
   )
 }
