@@ -9,7 +9,7 @@ import Footer from "./Components/Footer";
 
 
 const technologyFetch = async():Promise<TechnologyType[]>=>{
-  const res = await fetch('/public/data.json')
+  const res = await fetch('public/data.json')
   const data = await res.json();
   return data;
 }

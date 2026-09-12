@@ -6,8 +6,6 @@ interface TechnologyProps {
     selectedTechnologies: TechnologyType[];
 }
 const Technology = ({technologies,handleSelectedTechnologies,selectedTechnologies}: TechnologyProps) => {
-     
-    console.log(technologies);
     const handleAddToStack = (technology:TechnologyType) => {
         handleSelectedTechnologies(technology);
     };
