@@ -1,12 +1,14 @@
-import { useState } from "react";
 import type { TechnologyType } from "../../types/technologyType";
 
-
-const Technology = ({technologies,handleSelectedTechnologies}: {technologies: TechnologyType[]}) => {
-     const [selectedTechnologies, setSelectedTechnologies] = useState<TechnologyType[]>([]);
+interface TechnologyProps {
+    technologies: TechnologyType[];
+    handleSelectedTechnologies: (technology: TechnologyType) => void;
+    selectedTechnologies: TechnologyType[];
+}
+const Technology = ({technologies,handleSelectedTechnologies,selectedTechnologies}: TechnologyProps) => {
+     
     console.log(technologies);
     const handleAddToStack = (technology:TechnologyType) => {
-        setSelectedTechnologies([...selectedTechnologies, technology]);
         handleSelectedTechnologies(technology);
     };
     const isSelected = (technology: TechnologyType) => selectedTechnologies.includes(technology);
@@ -48,7 +50,7 @@ const Technology = ({technologies,handleSelectedTechnologies}: {technologies: Te
               </span>
             </div>    
 
-            <button onClick={() => handleAddToStack(technology)}
+            <button onClick={() => handleAddToStack(technology)} disabled={isSelected(technology)}
              className={`mt-6 w-full text-[12px] rounded-lg  py-3 
              font-semibold 
              ${(isSelected(technology))? "text-pink-700 bg-white border " : "bg-[#0A0F1D] text-white"}`}>
