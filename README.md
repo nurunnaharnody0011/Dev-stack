@@ -1,75 +1,39 @@
-# React + TypeScript + Vite
+[DevStack](https://devstack0011.netlify.app/)
+DevStack helps users explore technologies and build their own development stack.
+Technologies I Used:
+ - React.js
+ - TypeScript
+ - Tailwind CSS
+ - React Hot Toast
+ - JSON
+ - React Icon
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
+ - DevStack has a Navbar, Banner, Technology section, and Footer.
+ - In the Technology section, you can see some data on technologies, which is exported from a JSON file.
+ - Every technology card has an icon, name, description, category, and a button.
+ - Anyone can add or remove technologies from the stack.
+ - Also can get toast messages for different actions.
 
-Currently, two official plugins are available:
+?React Questions
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. What is JSX?
+= JSX lets us write HTML-like code inside JavaScript. It makes React UI easier to create.
 
-## React Compiler
+2. Props vs State
+= Props pass data between components. State stores data that can change.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+3. What does useState do?
+= useState stores changing data. I used it to store the selected technologies.
 
-## Expanding the ESLint configuration
+4. What does useEffect do?
+= useEffect runs code after a component loads. I used it to load technology data from the JSON file.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+5. Why is a unique key needed?
+= A unique key helps React identify each item.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+6. What is conditional rendering?
+= It shows content based on a condition. I used it to show “Your stack is empty” when no technology is selected.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+7. How do parent and child components communicate?
+= A parent sends data through props. A child calls a function received through props to send an action back.
