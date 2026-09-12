@@ -24,11 +24,38 @@ const Stack = ({technologies}: StackProps) => {
       } selected`}
 </p>
 
+  {technologies.length === 0 ? (
   <div className="mt-6 flex min-h-[250px] items-center justify-center rounded-xl border-2 border-dashed border-gray-200 bg-gray-50">
     <p className="text-sm text-gray-400">
       Your stack is empty
     </p>
   </div>
+) : (
+  <div className="mt-6 space-y-3">
+    {technologies.map((technology) => (
+      <div
+        key={technology.id}
+        className="flex items-center gap-3 rounded-xl border border-pink-200 p-3 bg-pink-50"
+      >
+        <img
+          src={technology.icon}
+          alt={technology.name}
+          className="h-9 w-9 object-contain"
+        />
+
+        <div>
+          <h3 className="font-semibold text-[#0F172A]">
+            {technology.name}
+          </h3>
+
+          <p className="text-xs text-gray-500">
+            {technology.category}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+)}
 </div>
         </div>
     );
