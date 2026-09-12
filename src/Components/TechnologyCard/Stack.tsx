@@ -1,6 +1,9 @@
 
-
-const Stack = () => {
+import type { TechnologyType } from "../../types/technologyType";
+interface StackProps {
+    technologies: TechnologyType[];
+}
+const Stack = ({technologies}: StackProps) => {
     return (
         <div>
             <div className="sticky top-6 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
