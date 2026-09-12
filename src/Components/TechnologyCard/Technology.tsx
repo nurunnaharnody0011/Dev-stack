@@ -2,12 +2,14 @@ import { useState } from "react";
 import type { TechnologyType } from "../../types/technologyType";
 
 
-const Technology = ({technologies}: {technologies: TechnologyType[]}) => {
-     const [selectedTechnologies, setSelectedTechnologies] = useState<boolean>(false);
+const Technology = ({technologies,handleSelectedTechnologies}: {technologies: TechnologyType[]}) => {
+     const [selectedTechnologies, setSelectedTechnologies] = useState<TechnologyType[]>([]);
     console.log(technologies);
-    const handleAddToStack = () => {
-        setSelectedTechnologies(true);
+    const handleAddToStack = (technology:TechnologyType) => {
+        setSelectedTechnologies([...selectedTechnologies, technology]);
+        handleSelectedTechnologies(technology);
     };
+    const isSelected = (technology: TechnologyType) => selectedTechnologies.includes(technology);
     return (
         <div className=" grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {
@@ -46,9 +48,11 @@ const Technology = ({technologies}: {technologies: TechnologyType[]}) => {
               </span>
             </div>    
 
-            <button onClick={handleAddToStack}}
-             className="mt-6 w-full text-[12px] rounded-lg bg-[#0A0F1D] py-3 font-semibold text-white transition hover:bg-[#1E293B]">
-              Add to Stack
+            <button onClick={() => handleAddToStack(technology)}
+             className={`mt-6 w-full text-[12px] rounded-lg  py-3 
+             font-semibold 
+             ${(isSelected(technology))? "text-pink-700 bg-white border " : "bg-[#0A0F1D] text-white"}`}>
+             {isSelected(technology) ? "Added to Stack" :"Add to Stack"}
             </button>
           </div>
                         </div>

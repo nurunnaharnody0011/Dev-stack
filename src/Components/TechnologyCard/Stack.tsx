@@ -3,6 +3,9 @@ import type { TechnologyType } from "../../types/technologyType";
 interface StackProps {
     technologies: TechnologyType[];
 }
+interface StackProps {
+    technologies: TechnologyType[];
+}
 const Stack = ({technologies}: StackProps) => {
     return (
         <div>
@@ -12,8 +15,14 @@ const Stack = ({technologies}: StackProps) => {
   </h2>
 
   <p className="mt-1 text-sm text-gray-500">
-    No technologies selected yet.
-  </p>
+  {technologies.length === 0
+    ? "No technologies selected yet."
+    : `${technologies.length} ${
+        technologies.length === 1
+          ? "technology"
+          : "technologies"
+      } selected`}
+</p>
 
   <div className="mt-6 flex min-h-[250px] items-center justify-center rounded-xl border-2 border-dashed border-gray-200 bg-gray-50">
     <p className="text-sm text-gray-400">
