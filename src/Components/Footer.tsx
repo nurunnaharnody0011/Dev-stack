@@ -12,7 +12,7 @@ const Footer = () => {
               alt="DevStack"
               className="w-32"/>
 
-            <p className="mt-4 max-w-[260px] text-sm text-gray-500">
+            <p className="mt-4 max-w-65 text-sm text-gray-500">
               Curated tools, technologies, and resources for developers
               building modern software.
             </p>
