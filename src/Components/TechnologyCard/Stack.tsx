@@ -1,12 +1,12 @@
 
+import { CiCircleRemove } from "react-icons/ci";
 import type { TechnologyType } from "../../types/technologyType";
 interface StackProps {
     technologies: TechnologyType[];
+    onRemoveSelectedTechnology: (technology: TechnologyType) => void;
 }
-interface StackProps {
-    technologies: TechnologyType[];
-}
-const Stack = ({technologies}: StackProps) => {
+
+const Stack = ({technologies, onRemoveSelectedTechnology}: StackProps) => {
     return (
         <div>
             <div className="sticky top-6 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
@@ -36,6 +36,7 @@ const Stack = ({technologies}: StackProps) => {
       <div
         key={technology.id}
         className="flex items-center gap-3 rounded-xl border border-pink-200 p-3 bg-pink-50"
+        onClick={() => onRemoveSelectedTechnology(technology)}
       >
         <img
           src={technology.icon}
@@ -52,6 +53,13 @@ const Stack = ({technologies}: StackProps) => {
             {technology.category}
           </p>
         </div>
+        <button
+          className="ml-auto text-xs text-red-500 hover:underline"
+          onClick={() => onRemoveSelectedTechnology(technology)}
+        >
+          <CiCircleRemove />
+
+        </button>
       </div>
     ))}
   </div>
